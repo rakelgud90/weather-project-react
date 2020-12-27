@@ -223,3 +223,7 @@ button#location-now {
 #input-city-field {
   margin: 0px;
 }
+
+.footer {
+  text-align: center;
+}

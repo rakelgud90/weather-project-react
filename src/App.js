@@ -3,6 +3,7 @@ import Hourly from "./Hourly";
 import Daily from "./Daily";
 import Current from "./Current";
 import Search from "./Search";
+import Footer from "./Footer"
 import "./styles.css";
 
 export default function App() {
@@ -40,7 +41,9 @@ export default function App() {
               <Daily />
             </div>
           </div>
+       
         </div>
+        <Footer />
       </div>
     </div>
   );
