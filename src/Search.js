@@ -1,9 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
+import FormatDate from "./FormatDate";
+import HourlyForecast from "./HourlyForecast";
 import "./styles.css";
+import axios from "axios"
 
-export default function Search() {
-  return (
+export default function Search(props) {
+    const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState(props.defaultCity);
+
+    function showWeather (response) {
+        setWeatherData({
+          ready: true,
+          temperature: response.data.main.temp,
+          humidity: response.data.main.humidity,
+          date: new Date(response.data.dt * 1000),
+          description: response.data.weather[0].description,
+          icon: response.data.weather[0].icon,
+          wind: response.data.wind.speed,
+          city: response.data.name,
+          minTemp: response.data.main.temp_min,
+          maxTemp: response.data.main.temp_max,
+          lon: response.data.coord.lon,
+          lat: response.data.coord.lat,
+        });
+      }
+
+      function handleSubmitCity(event) {
+        event.preventDefault();
+        search();}
+
+        function handleCityChange(event) {
+            setCity(event.target.value);
+          }
+
+ function search() {
+    const apiKey = "086aa1bfd05c11e55d8cff81f8be5a37";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
+  }
+
+
+ if (weatherData.ready) { return (
+
     <div className="search-bar">
+     <div className="current-weather">
+     <div className="card">
+      <div className="card-body">
+        <div className="row">
+          <div className="col-md-6">
+            <h1 className="card-title" id="current-city">
+            {weatherData.city}
+            </h1>
+            <span id="current-date">  <FormatDate date={weatherData.date} />  </span>
+          </div>
+          <div className="col-md-6 degrees">
+            <div className="row">
+              <div className="col-sm-6">
+                <span className="today-degrees">
+                  <span id="warmth-now">{Math.round(weatherData.temperature)}°C</span>
+                </span>
+              </div>
+              <span className="today-degrees">
+                <div className="col-sm-6">
+                  <span className="today-weather">
+                    <img
+                      src="http://openweathermap.org/img/wn/10d@2x.png"
+                      alt="icon"
+                      id="today-icon"
+                      width="120"
+                      height="120"
+                    />
+                  </span>
+                </div>
+              </span>
+            </div>
+            
+          </div>
+     
+          <div className="col-md-6 more-info">
+            <div className="row">
+              <div className="col-md-6">
+                <span>Humidity: </span>
+                <span id="current-humidity">{weatherData.humidity}</span>%
+              </div>
+              <div className="col-md-6">
+                <span>Wind: </span>
+                <span id="current-wind">{weatherData.wind}</span>
+              </div>
+              <div className="col-md-6">
+                <span>Min Temp: </span>
+                <span id="min-temp">{Math.round(weatherData.minTemp)}°C</span>
+              </div>
+              <div className="col-md-6">
+                <span>Max Temp: </span>
+                <span id="max-temp">{Math.round(weatherData.maxTemp)}°C</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6" id="description">
+            {weatherData.description}
+          </div>
+        </div>
+      </div>
+    </div>
+            </div>
       <div className="row align-items-center justify-content-center">
         <div className="col-sm-3">
           <div
@@ -32,19 +132,31 @@ export default function Search() {
           </div>
         </div>
         <div className="col-sm-8">
-          <form className="form" id="submit-button">
+          <form className="form" onSubmit={handleSubmitCity} id="submit-button">
             <div className="form-group" id="input-city-field">
               <input
                 type="search"
                 id="city"
                 className="form-control"
                 placeholder="Enter City Name"
-                autocomplete="off"
+                autoComplete="off"
+                onChange={handleCityChange}
               />
             </div>
           </form>
         </div>
       </div>
+      <div className="current-weather-hourly">
+              <div className="col-sm-12">
+                <HourlyForecast city={weatherData.city} lon={weatherData.lon} lat={weatherData.lat} />
+
+              </div>
+            </div>
+   
     </div>
+
   );
-}
+} else {
+    search();
+    return "YEEE";
+} }

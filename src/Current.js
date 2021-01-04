@@ -13,13 +13,16 @@ export default function Current() {
     max: "5°C"
   };
 
+
+  
+
   return (
     <div className="card">
       <div className="card-body">
         <div className="row">
           <div className="col-md-6">
             <h1 className="card-title" id="current-city">
-              {weatherInfo.city}
+            {weatherInfo.city}
             </h1>
             <span id="current-date"> {weatherInfo.date}</span>
           </div>

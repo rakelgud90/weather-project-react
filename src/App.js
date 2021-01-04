@@ -1,7 +1,8 @@
 import React from "react";
-import Hourly from "./Hourly";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Daily from "./Daily";
-import Current from "./Current";
+
 import Search from "./Search";
 import Footer from "./Footer"
 import "./styles.css";
@@ -12,24 +13,8 @@ export default function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm-8 left-side">
-            <div className="current-weather">
-              <Current />
-            </div>
-            <Search />
-            <div className="current-weather-hourly">
-              <div className="col-sm-12">
-                <div className="row" id="hourly">
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                  <Hourly />
-                </div>
-              </div>
-            </div>
+            <Search defaultCity="Reykjavik"/>
+            
           </div>
           <div className="col-sm-4 right-side">
             <div className="weather-forecast" id="daily">
