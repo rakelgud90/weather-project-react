@@ -13,7 +13,7 @@ export default function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm-8 left-side">
-            <Search defaultCity="Reykjavik"/>
+            <Search defaultCity="Reykjavik" />
             
           </div>
           <div className="col-sm-4 right-side">

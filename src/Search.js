@@ -20,9 +20,11 @@ export default function Search(props) {
           city: response.data.name,
           minTemp: response.data.main.temp_min,
           maxTemp: response.data.main.temp_max,
-          lon: response.data.coord.lon,
-          lat: response.data.coord.lat,
+          longitude: response.data.coord.lon,
+          latitude: response.data.coord.lat,
+          
         });
+        
       }
 
       function handleSubmitCity(event) {
@@ -34,7 +36,7 @@ export default function Search(props) {
           }
 
  function search() {
-    const apiKey = "086aa1bfd05c11e55d8cff81f8be5a37";
+    let apiKey = "e91b6bdaf8ad76a25dcc33363848923c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showWeather);
   }
@@ -148,8 +150,7 @@ export default function Search(props) {
       </div>
       <div className="current-weather-hourly">
               <div className="col-sm-12">
-                <HourlyForecast city={weatherData.city} lon={weatherData.lon} lat={weatherData.lat} />
-
+                <HourlyForecast latitude={weatherData.latitude} longitude={weatherData.longitude} />
               </div>
             </div>
    

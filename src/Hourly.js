@@ -4,19 +4,19 @@ import "./styles.css";
 export default function Hourly(props) {
 
   function hours() {
-    let date = new Date(props.data.hourly.dt * 1000);
+    let date = new Date(props.data.dt * 1000);
     let hours = date.getHours();
     return `${hours}:00`;
   }
 
   function temperature() {
-    let temperature = Math.round(props.data.hourly.temp);
+    let temperature = Math.round(props.data.temp);
 
     return `${temperature}°C`;
   }
 
   function humidity() {
-    let humidity = props.data.hourly.humidity;
+    let humidity = props.data.humidity;
 
     return `${humidity}%`;
   }
@@ -37,7 +37,7 @@ export default function Hourly(props) {
               <span className="temperature-warmth">
               {temperature()}
               </span>
-              <span className="temperature-warmth-unit">°C</span>
+              <span className="temperature-warmth-unit"></span>
             </span>
             <span className="hourly-row-2">
               <span className="weather-description-current">
