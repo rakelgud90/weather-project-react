@@ -17,11 +17,11 @@ export default function WeatherForecast(props) {
       setLoaded(true);
     }
 
-    function hourlyCall (){
+    function hourlyCall (response){
         let apiKey = "086aa1bfd05c11e55d8cff81f8be5a37";
         let units = "metric"
-        let longitude = response.data.coord.lon
-        let latitude = response.data.coord.lat
+        let longitude = response.data.coord.lon;
+        let latitude = response.data.coord.lat;
         let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`
         axios.get(url).then(handleHourlyForecast);
 
