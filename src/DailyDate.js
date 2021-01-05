@@ -5,7 +5,7 @@ import "./styles.css";
 export default function DailyDate(props) {
 
     function date() {
-      let date = new Date(props.newDate);
+      let date = new Date(props.data.dt * 1000);
         let monthsWeek = [
             "Jan",
             "Feb",
@@ -33,13 +33,13 @@ export default function DailyDate(props) {
       function temperature() {
         let temperature = Math.round(props.data.temp.day); 
     
-        return `${temperature}°C`;
+        return `${temperature}`;
       }
     
       function humidity() {
-        let humidity = props.humidity;
+        let humidity = props.data.humidity;
     
-        return `${humidity}%`;
+        return `${humidity}`;
       }
 
   return (

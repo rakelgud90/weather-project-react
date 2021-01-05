@@ -28,13 +28,9 @@ export default function Daily(props) {
       return (
         <div className="weather-forecast" id="daily">
 
-<DailyDate data={forecast[1]}/>
-        <DailyDate data={forecast[2]}/>
-        <DailyDate data={forecast[3]}/>
-        <DailyDate data={forecast[4]}/>
-        <DailyDate data={forecast[5]}/>
-        <DailyDate data={forecast[6]}/>
-        <DailyDate data={forecast[7]}/>
+{forecast.daily.slice(1, 8).map(function(forecastItem){
+                return  <DailyDate data={forecastItem} />;
+            })}
      
         </div>
       );
