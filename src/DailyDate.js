@@ -1,34 +1,75 @@
 import React from "react";
+import "./styles.css";
 
+export default function Daily(props) {
 
-export default function DailyDate (props) {
+    function date() {
+      let date = new Date(props.newDate);
+        let monthsWeek = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          let monthWeek = monthsWeek[date.getMonth()];
 
-
-    let monthsD = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    let monthD = monthsD[props.date.getMonth()];
-    let daysD = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let dayD = daysD[props.date.getDay()];
-
+        let daysWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let dayWeek = daysWeek[date.getDay()];
     
-    let dateD = props.date.getDate();
+        let dateWeek = date.getDate();
 
-   
-    return (
-        <div>
-       {dayD} {dateD} | {monthD}
+        return `${dayWeek} | ${dateWeek} ${monthWeek}`
+    }
+
+      function temperature() {
+        let temperature = Math.round(props.data.temp.day); 
+    
+        return `${temperature}°C`;
+      }
+    
+      function humidity() {
+        let humidity = props.humidity;
+    
+        return `${humidity}%`;
+      }
+
+  return (
+    <div className="card">
+      <div className="card-body">
+        <div className="row forecast-information">
+          <div className="col-sm-6 forecast-dates">
+  <h6 className="forecast-day"> {date()}</h6>
+          </div>
+          <div className="col-sm-6 forecast-dates"> XX </div>
         </div>
-      );
+        <div className="row align-items-center justify-content-center forecast-information">
+          <div className="col-sm-6 forecast-weather-info">
+            <span className="temperature-warmth">{temperature()}</span>
+            <span className="temperature-warmth-unit">°C</span>
+            <br />
+            <span>
+              <i className="fas fa-tint" aria-hidden="true"></i>
+              {humidity()}%
+            </span>
+          </div>
+          <div className="col-sm-6 forecast-icon">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              width="65"
+              height="65"
+              alt="icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

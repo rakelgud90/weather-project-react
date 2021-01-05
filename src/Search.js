@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormatDate from "./FormatDate";
+import Daily from "./Daily";
 import HourlyForecast from "./HourlyForecast";
 import "./styles.css";
 import axios from "axios"
@@ -44,7 +45,8 @@ export default function Search(props) {
 
  if (weatherData.ready) { return (
 
-    <div className="search-bar">
+  <div className="search-bar">
+    <div className="col-sm-8 left-side">
      <div className="current-weather">
      <div className="card">
       <div className="card-body">
@@ -105,7 +107,7 @@ export default function Search(props) {
         </div>
       </div>
     </div>
-            </div>
+    </div>
       <div className="row align-items-center justify-content-center">
         <div className="col-sm-3">
           <div
@@ -153,8 +155,14 @@ export default function Search(props) {
                 <HourlyForecast latitude={weatherData.latitude} longitude={weatherData.longitude} />
               </div>
             </div>
-   
+
+            </div>
+            <div className="col-sm-4 right-side">
+            
+            <Daily latitude={weatherData.latitude} longitude={weatherData.longitude} />
+        
     </div>
+  </div>
 
   );
 } else {
