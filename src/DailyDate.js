@@ -1,7 +1,8 @@
+
 import React from "react";
 import "./styles.css";
 
-export default function Daily(props) {
+export default function DailyDate(props) {
 
     function date() {
       let date = new Date(props.newDate);

@@ -3,7 +3,7 @@ import DailyDate from "./DailyDate";
 import axios from "axios";
 
 
-export default function WeatherDaily(props) {
+export default function Daily(props) {
     const [loaded, setLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
   
