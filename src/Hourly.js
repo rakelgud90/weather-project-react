@@ -5,8 +5,18 @@ export default function Hourly(props) {
 
   function hours() {
     let date = new Date(props.data.dt * 1000);
+
     let hours = date.getHours();
-    return `${hours}:00`;
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes =date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+
+      return `${hours}:${minutes}`;
+    }
+
   }
 
   function temperature() {
@@ -27,10 +37,10 @@ export default function Hourly(props) {
         <div className="card-body">
           <h5> {hours()} </h5>
           <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
+            src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt={props.data.description}
             width="80"
             height="80"
-            alt="icon"
+           
           />
           <div>
             <span className="hourly-row-1">

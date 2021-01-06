@@ -5,7 +5,7 @@ import "./styles.css";
 export default function Current(props) {
  
   return (
-    <div className="current-weather">
+    
      <div className="card">
       <div className="card-body">
         <div className="row">
@@ -26,9 +26,7 @@ export default function Current(props) {
                 <div className="col-sm-6">
                   <span className="today-weather">
                     <img
-                      src="http://openweathermap.org/img/wn/10d@2x.png"
-                      alt="icon"
-                      id="today-icon"
+                     src={props.data.icon} alt={props.data.description}
                       width="120"
                       height="120"
                     />
@@ -65,6 +63,6 @@ export default function Current(props) {
         </div>
       </div>
     </div>
-    </div>
+ 
   );
 }

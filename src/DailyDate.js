@@ -47,12 +47,13 @@ export default function DailyDate(props) {
       <div className="card-body">
         <div className="row forecast-information">
           <div className="col-sm-6 forecast-dates">
-  <h6 className="forecast-day"> {date()}</h6>
+            <h6 className="forecast-day"> {date()}</h6>
           </div>
           <div className="col-sm-6 forecast-dates"> XX </div>
         </div>
         <div className="row align-items-center justify-content-center forecast-information">
           <div className="col-sm-6 forecast-weather-info">
+            
             <span className="temperature-warmth">{temperature()}</span>
             <span className="temperature-warmth-unit">°C</span>
             <br />
@@ -63,10 +64,10 @@ export default function DailyDate(props) {
           </div>
           <div className="col-sm-6 forecast-icon">
             <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
+              src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`}  alt={props.data.description}
               width="65"
               height="65"
-              alt="icon"
+          
             />
           </div>
         </div>

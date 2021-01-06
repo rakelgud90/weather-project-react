@@ -10,17 +10,11 @@ import "./styles.css";
 export default function App() {
   return (
     <div className="App">
-      <div className="container">
-        <div className="row">
-          
-            <Search defaultCity="Reykjavik" />
-            
-      
-          
-       
-        </div>
+    
+    <div className="container">
+        <Search defaultCity="Reykjavik" />    
         <Footer />
       </div>
-    </div>
+      </div>
   );
 }

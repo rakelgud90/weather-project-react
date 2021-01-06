@@ -28,7 +28,7 @@ export default function Daily(props) {
       return (
         <div className="weather-forecast" id="daily">
 
-{forecast.daily.slice(1, 8).map(function(forecastItem){
+{forecast.daily.slice(1, ).map(function(forecastItem){
                 return  <DailyDate data={forecastItem} />;
             })}
      
