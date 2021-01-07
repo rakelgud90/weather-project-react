@@ -38,8 +38,8 @@ export default function Hourly(props) {
           <h5> {hours()} </h5>
           <img
             src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt={props.data.description}
-            width="80"
-            height="80"
+            width="65"
+            height="65"
            
           />
           <div>

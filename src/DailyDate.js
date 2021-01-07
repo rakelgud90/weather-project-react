@@ -43,35 +43,32 @@ export default function DailyDate(props) {
       }
 
   return (
+   
     <div className="card">
       <div className="card-body">
-        <div className="row forecast-information">
-          <div className="col-sm-6 forecast-dates">
-            <h6 className="forecast-day"> {date()}</h6>
+        <div className="row test">
+          <div className="col-8 forecast-dates">
+            <h6 className="forecast-day">{date()}</h6>
+            <ul className="dailyInfo">
+            <li className="temperature-warmth">{temperature()}<span className="temperature-warmth-unit">°C</span></li>
+            <li> <i className="fas fa-tint" aria-hidden="true"></i>
+              {humidity()}%</li>
+            </ul>
+
           </div>
-          <div className="col-sm-6 forecast-dates"> XX </div>
-        </div>
-        <div className="row align-items-center justify-content-center forecast-information">
-          <div className="col-sm-6 forecast-weather-info">
-            
-            <span className="temperature-warmth">{temperature()}</span>
-            <span className="temperature-warmth-unit">°C</span>
-            <br />
-            <span>
-              <i className="fas fa-tint" aria-hidden="true"></i>
-              {humidity()}%
-            </span>
-          </div>
-          <div className="col-sm-6 forecast-icon">
+          <div className="col-4 forecast-dates" >
             <img
-              src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`}  alt={props.data.description}
+              src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`}   alt={props.data.description}
               width="65"
               height="65"
-          
+            className="dailyIcon"
+           
             />
           </div>
         </div>
+        
       </div>
     </div>
+
   );
 }

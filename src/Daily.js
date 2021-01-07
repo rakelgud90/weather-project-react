@@ -29,7 +29,7 @@ export default function Daily(props) {
         <div className="weather-forecast" id="daily">
 
 {forecast.daily.slice(1, ).map(function(forecastItem){
-                return  <DailyDate data={forecastItem} />;
+                return  <DailyDate data={forecastItem} unit={props.unit} />;
             })}
      
         </div>
