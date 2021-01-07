@@ -79,11 +79,11 @@ export default function TemperatureUnit(props) {
  id="toggle-button"
 >
  <label className="btn btn-secondary active" id="celsius-converter">
-   <input type="radio" name="options" id="option1" checked onChange={showCelsius}/>
+   <input type="radio" name="options" id="option1"/>
    °C
  </label>
  <label className="btn btn-secondary" id="fahrenheit-converter">
-   <input type="radio" name="options" id="option2" /> °F
+   <input type="radio" name="options" id="option2" onClick={showFahrenheit} /> °F
  </label>
 </div>
 </div>
@@ -112,7 +112,7 @@ return (
                   <div className="row">
                     <div className="col-sm-6">
                       <span className="today-degrees">
-                        <span id="warmth-now">{Math.round(fahrenheitTemperature)}°C</span>
+                        <span id="warmth-now">{Math.round(fahrenheitTemperature)}°F</span>
                       </span>
                     </div>
                     <span className="today-degrees">
@@ -142,11 +142,11 @@ return (
                     </div>
                     <div className="col-md-6">
                       <span>Min Temp: </span>
-                      <span id="min-temp">{Math.round(fahrenheitMinTemp)}°C</span>
+                      <span id="min-temp">{Math.round(fahrenheitMinTemp)}°F</span>
                     </div>
                     <div className="col-md-6">
                       <span>Max Temp: </span>
-                      <span id="max-temp">{Math.round(fahrenheitMaxTemp)}°C</span>
+                      <span id="max-temp">{Math.round(fahrenheitMaxTemp)}°F</span>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ return (
     id="toggle-button"
   >
     <label className="btn btn-secondary active" id="celsius-converter">
-      <input type="radio" name="options" id="option1" checked onChange={showFahrenheit}/>
+      <input type="radio" name="options" id="option1" checked onClick={showCelsius} />
       °C
     </label>
     <label className="btn btn-secondary" id="fahrenheit-converter">
