@@ -1,17 +1,17 @@
 import React from "react";
 import FormatDate from "./FormatDate";
-import "./styless.css"
+import "./styles.css"
 
 export default function TemperatureUnit(props) {
 
     function showFahrenheit(event) {
         event.preventDefault();
-        setUnit("fahrenheit")
+        props.setUnit("fahrenheit")
     }
 
     function showCelsius(event) {
         event.preventDefault();
-        setUnit("celsius")
+        props.setUnit("celsius")
     }
 
     if (props.unit === "celsius") {
@@ -92,7 +92,7 @@ export default function TemperatureUnit(props) {
     else 
     {   let fahrenheitTemperature = (props.data.temperature * 9) / 5 + 32;
         let fahrenheitMaxTemp = (props.data.maxTemp * 9) / 5 + 32;
-        let fahrenheitMinTemp = (props.data.minTemp * 9) / 5 + 32;
+        let fahrenheitMinTemp = (props.data.minTemp * 9) / 5 + 32;  
         
 return (
 <div className="Temperature">
@@ -165,7 +165,7 @@ return (
     id="toggle-button"
   >
     <label className="btn btn-secondary active" id="celsius-converter">
-      <input type="radio" name="options" id="option1" checked onChange={showCelsius}/>
+      <input type="radio" name="options" id="option1" checked onChange={showFahrenheit}/>
       °C
     </label>
     <label className="btn btn-secondary" id="fahrenheit-converter">
