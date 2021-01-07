@@ -21,6 +21,10 @@ export default function Hourly(props) {
 
   function temperature() {
     let temperature = Math.round(props.data.temp);
+    if (props.unit === "fahrenheit") {
+      temperature = Math.round((temperature * 9) / 5 + 32);
+      return `${temperature}°F`;
+    }
 
     return `${temperature}°C`;
   }

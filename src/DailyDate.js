@@ -30,11 +30,17 @@ export default function DailyDate(props) {
         return `${dayWeek} | ${dateWeek} ${monthWeek}`
     }
 
-      function temperature() {
-        let temperature = Math.round(props.data.temp.day); 
-    
-        return `${temperature}`;
+
+    function temperature() {
+      let temperature = Math.round(props.data.temp.day);
+      if (props.unit === "fahrenheit") {
+        temperature = Math.round((temperature * 9) / 5 + 32);
+        return `${temperature}°F`;
       }
+  
+      return `${temperature}°C`;
+    }
+
     
       function humidity() {
         let humidity = props.data.humidity;

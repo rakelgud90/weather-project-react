@@ -30,7 +30,7 @@ export default function WeatherForecast(props) {
         <div className="row" id="hourly">
 
             {forecast.hourly.slice(0, 8).map(function(forecastItem){
-                return  <Hourly data={forecastItem} unit="celsius"  />;
+                return  <Hourly data={forecastItem} unit={props.unit}  />;
             })}
      
         </div>
