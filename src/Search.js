@@ -4,7 +4,7 @@ import TemperatureUnit from "./TemperatureUnit.js"
 import Daily from "./Daily";
 import HourlyForecast from "./HourlyForecast";
 import "./styles.css";
-import "./Search.css";
+//import "./Search.css";
 import axios from "axios"
 
 export default function Search(props) {
@@ -48,9 +48,9 @@ export default function Search(props) {
 
  if (weatherData.ready) { return (
 
-<div className="row">
+<div className="row left-side">
   
-<div className="col-sm-8 left-side search-bar">
+<div className="col-sm-8 search-bar">
 
       <TemperatureUnit data={weatherData} unit={unit} setUnit={setUnit}/>
  
@@ -80,12 +80,13 @@ export default function Search(props) {
                                   </div>
                                 </form>
                           </div>
-        </div>
-      <div className="current-weather-hourly">
+                          <div className="current-weather-hourly">
           <div className="col-sm-12">
                 <HourlyForecast latitude={weatherData.latitude} longitude={weatherData.longitude} unit={unit}/>
            </div>
             </div>
+        </div>
+     
         
          <div className="col-sm-4 right-side">
             <Daily latitude={weatherData.latitude} longitude={weatherData.longitude} unit={unit}/>

@@ -95,7 +95,7 @@ export default function TemperatureUnit(props) {
         let fahrenheitMinTemp = (props.data.minTemp * 9) / 5 + 32;  
         
 return (
-<div className="Temperature">
+<div className="Temperature left-side">
     <div className="current-weather">
         <div className="card">
             <div className="card-body">
