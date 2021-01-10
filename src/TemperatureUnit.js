@@ -2,7 +2,9 @@ import React from "react";
 import FormatDate from "./FormatDate";
 import "./styles.css"
 
+
 export default function TemperatureUnit(props) {
+
 
     function showFahrenheit(event) {
         event.preventDefault();
@@ -16,45 +18,49 @@ export default function TemperatureUnit(props) {
 
     if (props.unit === "celsius") {
         return (
-<div className="Temperature">
+<div className="Temperature left-side">
 <div className="current-weather">
     <div className="card">
         <div className="card-body">
             <div className="row">
-              <div className="col-md-6">
-                  <h1 className="card-title" id="current-city">
-                  {props.data.city}
-                  </h1>
-                  <span id="current-date">  <FormatDate date={props.data.date} />  </span>
+                <div className="col-md-6">
+                    <h1 className="card-title" id="current-city">
+                    {props.data.city}
+                    </h1>
+                    <span id="current-date">  <FormatDate date={props.data.date} />  </span>
                 </div>
-                <div className="col-md-6 degrees">
+                 <div className="col-md-6 degrees">
                     <div className="row">
+                        
                         <div className="col-sm-6">
-                      		<span className="today-degrees">
-                       		    <span id="warmth-now">{Math.round(props.data.temperature)}°C</span>
-                     	     </span>
+                         
+                                <img id="current-icon" src={props.data.icon} alt={props.data.description} width="120" height="120"
+                                />
+
+<span>
+                                 <small  id="description">{props.data.description}</small>
+                                 </span>
+                           
                         </div>
-                    	<span className="today-degrees">
-
-
-                      	    <div className="col-sm-6">
-                        		<span className="today-weather">
-                          			<img src={props.data.icon} alt={props.data.description} width="120" height="120"
-                          	/>
-                       		 	</span>
-                     		</div>
-                   		 </span>
-                  </div>
+                        <div className="col-sm-6">
+                            <span className="today-degrees">
+                                <span id="warmth-now">
+                                    {Math.round(props.data.temperature)}°C 
+                                </span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
+             
                 <div className="col-md-6 more-info">
                   <div className="row">
                     <div className="col-md-6">
                       <span>Humidity: </span>
-                      <span id="current-humidity">{props.data.humidity}</span>%
+                      <span id="current-humidity">{props.data.humidity} %</span>
                     </div>
                     <div className="col-md-6">
                       <span>Wind: </span>
-                      <span id="current-wind">{Math.round(props.data.wind* 2.237)}</span>
+                      <span id="current-wind">{Math.round(props.data.wind* 2.237)} m/s</span>
                     </div>
                     <div className="col-md-6">
                       <span>Min Temp: </span>
@@ -66,15 +72,11 @@ export default function TemperatureUnit(props) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6" id="description">
-                  {props.data.description}
-                </div>
+                <div className="col-md-6">
+                  
 
-             </div>
-        </div>
-    </div>
-</div>
- <div className="btn-group btn-group-toggle"
+
+                  <div className="btn-group btn-group-toggle"
  data-toggle="buttons"
  id="toggle-button"
 >
@@ -86,6 +88,16 @@ export default function TemperatureUnit(props) {
    <input type="radio" name="options" id="option2" onClick={showFahrenheit} /> °F
  </label>
 </div>
+                </div>
+
+             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 </div>
 
         )}
@@ -96,53 +108,53 @@ export default function TemperatureUnit(props) {
         
 return (
 <div className="Temperature left-side">
-    <div className="current-weather">
-        <div className="card">
-            <div className="card-body">
-              <div className="row">
+<div className="current-weather">
+    <div className="card">
+        <div className="card-body">
+            <div className="row">
                 <div className="col-md-6">
-                  <h1 className="card-title" id="current-city">
-                  {props.data.city}
-                  </h1>
-                  <span id="current-date">  <FormatDate date={props.data.date} />  </span>
+                    <h1 className="card-title" id="current-city">
+                    {props.data.city}
+                    </h1>
+                    <span id="current-date">  <FormatDate date={props.data.date} />  </span>
                 </div>
+                 <div className="col-md-6 degrees">
+                    <div className="row">
+                        
+                        <div className="col-sm-6">
+                         
+                                <img id="current-icon" src={props.data.icon} alt={props.data.description} width="120" height="120"
+                                />
 
-
-                <div className="col-md-6 degrees">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <span className="today-degrees">
-                        <span id="warmth-now">{Math.round(fahrenheitTemperature)}°F</span>
-                      </span>
+<span>
+                                 <small  id="description">{props.data.description}</small>
+                                 </span>
+                           
+                        </div>
+                        <div className="col-sm-6">
+                            <span className="today-degrees">
+                                <span id="warmth-now">
+                                {Math.round(fahrenheitTemperature)}°F
+                                </span>
+                            </span>
+                        </div>
                     </div>
-                    <span className="today-degrees">
-                      <div className="col-sm-6">
-                        <span className="today-weather">
-                          <img
-                           src={props.data.icon} alt={props.data.description}
-                            width="120"
-                            height="120"
-                          />
-                        </span>
-                      </div>
-                    </span>
-                  </div>
-                  
                 </div>
-           
+             
                 <div className="col-md-6 more-info">
                   <div className="row">
                     <div className="col-md-6">
                       <span>Humidity: </span>
-                      <span id="current-humidity">{props.data.humidity}</span>%
+                      <span id="current-humidity">{props.data.humidity} %</span>
                     </div>
                     <div className="col-md-6">
                       <span>Wind: </span>
-                      <span id="current-wind">{props.data.wind}</span>
+                      <span id="current-wind">{Math.round(props.data.wind* 2.237)} mph</span>
                     </div>
                     <div className="col-md-6">
                       <span>Min Temp: </span>
-                      <span id="min-temp">{Math.round(fahrenheitMinTemp)}°F</span>
+                      <span id="min-temp">{Math.round(fahrenheitMinTemp)}°F
+</span>
                     </div>
                     <div className="col-md-6">
                       <span>Max Temp: </span>
@@ -150,29 +162,35 @@ return (
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6" id="description">
-                  {props.data.description}
-                </div>
-              </div>
-            </div>
-          </div>
-       
-        </div>
+                <div className="col-md-6">
+                  
 
-  <div
-    className="btn-group btn-group-toggle"
-    data-toggle="buttons"
-    id="toggle-button"
-  >
-    <label className="btn btn-secondary active" id="celsius-converter">
+
+                  <div className="btn-group btn-group-toggle"
+ data-toggle="buttons"
+ id="toggle-button"
+>
+<label className="btn btn-secondary" id="celsius-converter">
       <input type="radio" name="options" id="option1" checked onClick={showCelsius} />
       °C
     </label>
-    <label className="btn btn-secondary" id="fahrenheit-converter">
+    <label className="btn btn-secondary active" id="fahrenheit-converter">
       <input type="radio" name="options" id="option2" /> °F
     </label>
-  </div>
 </div>
+                </div>
+
+             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
  )
-}
+} 
 }

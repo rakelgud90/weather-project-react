@@ -56,8 +56,8 @@ export default function DailyDate(props) {
           <div className="col-8 forecast-dates">
             <h6 className="forecast-day">{date()}</h6>
             <ul className="dailyInfo">
-            <li className="temperature-warmth">{temperature()}<span className="temperature-warmth-unit">°C</span></li>
-            <li> <i className="fas fa-tint" aria-hidden="true"></i>
+            <li className="temperature-warmth">{temperature()}<span className="temperature-warmth-unit"></span></li>
+            <li>
               {humidity()}%</li>
             </ul>
 

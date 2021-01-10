@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import Current from "./Current";
+
 import TemperatureUnit from "./TemperatureUnit.js"
 import Daily from "./Daily";
 import HourlyForecast from "./HourlyForecast";
@@ -48,27 +48,20 @@ export default function Search(props) {
 
  if (weatherData.ready) { return (
 
-<div className="row left-side">
+<div className="row">
   
-<div className="col-sm-8 search-bar">
-
-      <TemperatureUnit data={weatherData} unit={unit} setUnit={setUnit}/>
+<div className="col-lg-8 left-side">
+        <TemperatureUnit data={weatherData} unit={unit} setUnit={setUnit}/>
  
-      <div className="row align-items-center justify-content-center">
-  <div className="col-sm-1" id="search-bar-current-location">
+ <div>
+  <div className="row search-bar-current-location search-bar">
  
-                                  <button type="button" id="location-now">
-                                    <i
-                                      className="fas fa-map-marker-alt"
-                                      aria-hidden="true"
-                                      id="locationbutton"
-                                    ></i>
-                                  </button>
-                                </div>
-                          </div>
-                          <div className="col-sm-8">
+                       
+                    
+                           
+                       
                                 <form className="form" onSubmit={handleSubmitCity} id="submit-button">
-                                  <div className="form-group" id="input-city-field">
+                                  <div className="form-group w-100" id="input-city-field">
                                     <input
                                       type="search"
                                       id="city"
@@ -79,6 +72,15 @@ export default function Search(props) {
                                     />
                                   </div>
                                 </form>
+
+                                <button type="button" id="location-now" >
+                                    <i
+                                      className="fas fa-map-marker-alt"
+                                      aria-hidden="true"
+                                      id="locationbutton"
+                                    ></i>
+                                  </button>
+                                </div>
                           </div>
                           <div className="current-weather-hourly">
           <div className="col-sm-12">
@@ -88,7 +90,7 @@ export default function Search(props) {
         </div>
      
         
-         <div className="col-sm-4 right-side">
+         <div className="col-lg-4 right-side">
             <Daily latitude={weatherData.latitude} longitude={weatherData.longitude} unit={unit}/>
          </div>
   </div>
