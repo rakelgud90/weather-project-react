@@ -1,11 +1,9 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';  
 
-//import Daily from "./Daily";
-
-import Search from "./Search";
+import Search from "./WeatherMain";
 import Footer from "./Footer"
-import "./styles.css";
+import "./App.css";
 
 export default function App() {
   return (

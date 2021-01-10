@@ -1,0 +1,80 @@
+/* Toggle Button */
+
+.btn-secondary {
+  color: #48484a;
+  background-color: white;
+  border-color: white;
+}
+
+.btn-group {
+  float: right;
+  padding-right: 25px;
+}
+
+.btn-secondary:hover {
+  background: #f8d8e4;
+  border: #f8d8e4;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active {
+  background: #48484a;
+  border: #48484a;
+}
+
+#toggle-button.btn-group.btn-group-toggle {
+  padding-left: 15px;
+}
+
+/* Current Weather */
+
+.current-weather {
+  border: 1px solid #a8edea 0%, #fed6e3 100%;
+  margin: 0px 0px 20px 0px;
+  padding: 15px;
+  max-width: 1000px;
+  border-radius: 15px;
+  background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
+  box-shadow: 5px 5px 10px #f6f5f1;
+}
+
+.current-weather .card {
+  border-radius: 20px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.current-weather .card-body {
+  padding: 5px;
+}
+
+.current-weather .more-info {
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.today-degrees {
+  font-size: 40px;
+}
+
+.current-weather img {
+  position: absolute;
+  top: -30px;
+  left: 25px;
+}
+
+#warmth-now {
+  text-align: right;
+}
+
+#current-date {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+#description {
+  text-transform: uppercase;
+  font-size: medium;
+  position: absolute;
+  bottom: -40px;
+  left: 45px;
+}

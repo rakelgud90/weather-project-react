@@ -3,6 +3,7 @@ import Hourly from "./Hourly";
 import axios from "axios";
 
 
+
 export default function WeatherForecast(props) {
     const [loaded, setLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
@@ -27,12 +28,12 @@ export default function WeatherForecast(props) {
   
     if (loaded && props.latitude === forecast.latitude){
       return (
-        <div className="row" id="hourly">
-
+        <div className="current-weather-hourly">
+    <div className="row" id="hourly"> 
             {forecast.hourly.slice(1, 7).map(function(forecastItem){
                 return  <Hourly data={forecastItem} unit={props.unit}  />;
             })}
-     
+       </div>
         </div>
       );
     } else {

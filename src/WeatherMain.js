@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
+import Loader from 'react-loader-spinner'
 import TemperatureUnit from "./TemperatureUnit.js"
 import Daily from "./Daily";
 import HourlyForecast from "./HourlyForecast";
-import "./styles.css";
-//import "./Search.css";
+
+import "./WeatherMain.css";
 import axios from "axios"
 
 export default function Search(props) {
@@ -55,11 +55,6 @@ export default function Search(props) {
  
  <div>
   <div className="row search-bar-current-location search-bar">
- 
-                       
-                    
-                           
-                       
                                 <form className="form" onSubmit={handleSubmitCity} id="submit-button">
                                   <div className="form-group w-100" id="input-city-field">
                                     <input
@@ -82,11 +77,11 @@ export default function Search(props) {
                                   </button>
                                 </div>
                           </div>
-                          <div className="current-weather-hourly">
-          <div className="col-sm-12">
+                       
+          
                 <HourlyForecast latitude={weatherData.latitude} longitude={weatherData.longitude} unit={unit}/>
-           </div>
-            </div>
+      
+      
         </div>
      
         
@@ -98,5 +93,5 @@ export default function Search(props) {
   );
 } else {
     search();
-    return "YEEE";
+    return <Loader type="Hearts" color="#FCD6E2" height={80} width={80} />  ;
 } } 

@@ -1,6 +1,7 @@
 
 import React from "react";
-import "./styles.css";
+
+import "./DailyDate.css"
 
 export default function DailyDate(props) {
 
@@ -45,7 +46,7 @@ export default function DailyDate(props) {
       function humidity() {
         let humidity = props.data.humidity;
     
-        return `${humidity}`;
+        return `${humidity}%`;
       }
 
   return (
@@ -56,19 +57,16 @@ export default function DailyDate(props) {
           <div className="col-8 forecast-dates">
             <h6 className="forecast-day">{date()}</h6>
             <ul className="dailyInfo">
-            <li className="temperature-warmth">{temperature()}<span className="temperature-warmth-unit"></span></li>
-            <li>
-              {humidity()}%</li>
+            <li>{temperature()}</li>
+            <li>{humidity()}</li>
             </ul>
-
           </div>
           <div className="col-4 forecast-dates" >
             <img
               src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`}   alt={props.data.description}
               width="65"
               height="65"
-            className="dailyIcon"
-           
+              className="dailyIcon"
             />
           </div>
         </div>

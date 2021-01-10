@@ -1,0 +1,31 @@
+.search-bar {
+  border: 1px solid transparent 100%;
+  margin: 20px 0;
+  padding: 15px;
+  max-width: 1000px;
+  border-radius: 15px;
+  background-color: #fdfdfd;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.04),
+    -4px -4px 15px rgba(0, 0, 0, 0.04);
+}
+
+button#location-now {
+  border-radius: 10px;
+  border: transparent;
+  padding: 7px 6px 5px 20px;
+  background-color: transparent;
+  border-width: 1px;
+}
+
+#locationbutton:hover {
+  color: #a8ecea;
+  transition: color 0.15s ease-in-out;
+}
+
+#input-city-field {
+  margin: 0px;
+}
+#submit-button {
+  float: right;
+  width: 510px;
+}

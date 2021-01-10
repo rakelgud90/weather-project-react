@@ -1,5 +1,7 @@
 import React from "react";
-import "./styles.css";
+import "./HourlyForecast.css";
+
+
 
 export default function Hourly(props) {
 
@@ -36,18 +38,13 @@ export default function Hourly(props) {
   }
 
   return (
+
     <div className="col-md-4">
       <div className="card">
         <div className="card-body">
           <h5> {hours()} </h5>
-          
           <div>
-            <span className="hourly-row-1">
-              <span className="temperature-warmth">
-              {temperature()}
-              </span>
-              <span className="temperature-warmth-unit"></span>
-            </span>
+            <span className="hourly-row-1"> {temperature()}</span>
             <span><img
             src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}.png`} alt={props.data.description}
             width="70"
@@ -55,14 +52,14 @@ export default function Hourly(props) {
            
           /></span>
             <span className="hourly-row-2">
-              <span className="weather-description-current">
-           
                 {humidity()}
-              </span>
+             
             </span>
+         
           </div>
         </div>
+        </div>
       </div>
-    </div>
+
   );
 }
