@@ -88,6 +88,7 @@ export default function Search(props) {
          <div className="col-lg-4 right-side">
             <Daily latitude={weatherData.latitude} longitude={weatherData.longitude} unit={unit}/>
          </div>
+         
   </div>
 
   );

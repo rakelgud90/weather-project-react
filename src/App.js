@@ -1,8 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';  
-
-import Search from "./WeatherMain";
-import Footer from "./Footer"
+import WeatherMain from "./WeatherMain";
 import "./App.css";
 
 export default function App() {
@@ -10,8 +8,11 @@ export default function App() {
     <div className="App">
     
     <div className="container">
-        <Search defaultCity="Reykjavik" />    
-        <Footer />
+        <WeatherMain defaultCity="Reykjavik" />    
+        <footer>
+      <a href="https://github.com/rakelgud90/weather-project-react">Open-Source Code </a>
+      By Rakel Jonsdottir Gudmann 🇮🇸
+    </footer>
       </div>
       </div>
   );
