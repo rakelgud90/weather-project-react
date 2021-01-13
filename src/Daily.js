@@ -17,7 +17,7 @@ export default function Daily(props) {
     }
 
     function dailyCall (){
-        let apiKey = "e91b6bdaf8ad76a25dcc33363848923c";
+        let apiKey = "b8abed848b385bf1fb7e538053cfa14f";
         let units = "metric"
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`
         axios.get(apiUrl).then(handleDailyForecast);

@@ -18,7 +18,7 @@ export default function WeatherForecast(props) {
     }
 
     function hourlyCall (){
-        let apiKey = "e91b6bdaf8ad76a25dcc33363848923c";
+        let apiKey = "b8abed848b385bf1fb7e538053cfa14f";
         let units = "metric"
    
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=minutely,daily,alerts&appid=${apiKey}&units=${units}`
