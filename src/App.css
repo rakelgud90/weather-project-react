@@ -18,3 +18,11 @@
   font-size: 11px;
   margin: 10px 0;
 }
+
+/* <button type="button" id="location-now" >
+<i
+  className="fas fa-map-marker-alt"
+  aria-hidden="true"
+  id="locationbutton"
+></i>
+</button>*/

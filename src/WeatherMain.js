@@ -68,13 +68,7 @@ export default function Search(props) {
                                   </div>
                                 </form>
 
-                                <button type="button" id="location-now" >
-                                    <i
-                                      className="fas fa-map-marker-alt"
-                                      aria-hidden="true"
-                                      id="locationbutton"
-                                    ></i>
-                                  </button>
+                                   
                                 </div>
                           </div>
                        
